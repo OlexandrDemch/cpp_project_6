@@ -1,0 +1,51 @@
+#include <iostream>
+
+int main() {
+  int array1[5] = {3, -1, 4, 0, -2};
+  int array2[5] = {2, 0, -3, 5, 1};
+  int merged[10];
+  int index = 0;
+
+  
+  for (int i = 0; i < 5; i++) {
+    if (array1[i] > 0) {
+      merged[index] = array1[i];
+      index++;
+    }
+    if (array2[i] > 0) {
+      merged[index] = array2[i];
+      index++;
+    }
+  }
+
+  
+  for (int i = 0; i < 5; i++) {
+    if (array1[i] == 0) {
+      merged[index] = array1[i];
+      index++;
+    }
+    if (array2[i] == 0) {
+      merged[index] = array2[i];
+      index++;
+    }
+  }
+
+
+  for (int i = 0; i < 5; i++) {
+    if (array1[i] < 0) {
+      merged[index] = array1[i];
+      index++;
+    }
+    if (array2[i] < 0) {
+      merged[index] = array2[i];
+      index++;
+    }
+  }
+
+
+  for (int i = 0; i < 10; i++) {
+    std::cout << merged[i] << " ";
+  }
+
+  return 0;
+}
